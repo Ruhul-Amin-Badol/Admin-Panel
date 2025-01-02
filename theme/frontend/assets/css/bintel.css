@@ -1,0 +1,808 @@
+.button-wrapper {
+    position: relative;
+    margin-right: 15px;
+
+}
+
+
+.button-wrapper .button {
+    display: block;
+    font-size: 15px !important;
+    line-height: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 15px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(37, 37, 37);
+    border-radius: 50px;
+    border: 0px;
+    cursor: pointer;
+}
+
+.button-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    background: linear-gradient(90deg, #FF8038 0%, #FF0099 30.43%, #00EBEB 68.23%, #DB00FF 100%);
+    background-size: 600% 600%;
+    border-radius: 50px;
+    animation: AnimateBorder 4s ease infinite;
+    -webkit-animation: AnimateBorder 4s ease infinite;
+    -moz-animation: AnimateBorder 4s ease infinite;
+    z-index: -1;
+    transform: translate(-2px, -2px);
+    transition: filter 1s ease-in;
+}
+
+.button-wrapper:hover .button-bg {
+    filter: blur(10px);
+    transition: filter .4s ease-in;
+}
+
+
+@-webkit-keyframes AnimateBorder {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes AnimateBorder {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes AnimateBorder {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+.custom-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-input {
+    background-color: #f1f3f5;
+    border: none;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    padding: 10px 15px;
+
+}
+
+.custom-btn-light {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border: none;
+    transition: all 0.3s;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.custom-btn-light:hover {
+    background-color: #e9ecef;
+}
+
+.custom-btn-primary {
+    background: linear-gradient(45deg, #00BCD4, #2196F3);
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.custom-btn-primary:hover {
+    background: linear-gradient(45deg, #0056b3, #00BCD4);
+    color: #ffffff;
+}
+
+.custom-icon {
+    font-size: 1.5rem;
+}
+
+.writer_img img {
+    height: 40px;
+    width: 40px;
+}
+
+/* User Profile Section */
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.profile-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 50%;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+
+.trend-item {
+    position: relative;
+}
+
+/* Premium Ribbon */
+.premium-ribbon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transform-origin: top right;
+    z-index: 10;
+    cursor: pointer;
+}
+
+/* Ribbon Shapes */
+.premium-ribbon::before,
+.premium-ribbon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    z-index: -1;
+}
+
+.premium-ribbon::before {
+    top: 0;
+    left: 0;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.premium-ribbon::after {
+    bottom: 0;
+    right: 0;
+    clip-path: polygon(100% 100%, 0 100%, 100% 0);
+}
+
+/* Tooltip Styling */
+.premium-ribbon .tooltip-content {
+    position: absolute;
+    top: 100%;
+    /* Below the ribbon */
+    right: 0;
+    /* Align to the right */
+    width: 200px;
+    /* Increased width for full text */
+    padding: 10px;
+    background-color: #222;
+    /* Dark background */
+    color: #fff;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 5px;
+    text-align: left;
+    white-space: normal;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: auto;
+    /* Allow click on tooltip */
+}
+
+/* Tooltip Arrow */
+.premium-ribbon .tooltip-content::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 20px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent #222 transparent;
+}
+
+/* Action Link */
+.tooltip-content a.go-premium {
+    color: #f4b03e;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.tooltip-content a.go-premium:hover {
+    text-decoration: underline;
+}
+
+/* Hover Effect - Show Tooltip */
+.premium-ribbon:hover .tooltip-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(5px);
+}
+
+/* Container for file input */
+.custom-file-container {
+    position: relative;
+    width: 100%;
+}
+
+/* Hide default file input */
+.custom-file-input {
+    display: none;
+}
+
+/* Styled label as a file input button */
+.custom-file-label {
+    display: block;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #555;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* Hover effect */
+.custom-file-label:hover {
+    background-color: #e2e6ea;
+    border-color: #ccc;
+}
+
+/* Active effect */
+.custom-file-label:active {
+    background-color: #d6d8db;
+    border-color: #bbb;
+}
+
+/* Container for futuristic input */
+.futuristic-input-container {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Modern Input Base */
+.futuristic-input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    /* Transparent glass effect */
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    outline: none;
+    z-index: 2;
+    position: relative;
+    transition: all 0.4s ease-in-out;
+
+
+}
+
+/* Placeholder Styling */
+.futuristic-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+    font-size: 14px;
+}
+
+/* Focus Effect */
+.futuristic-input:focus {
+    border: 2px solid rgb(12 104 95);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 6px 25px rgb(1, 44, 40);
+    transform: scale(1.01);
+}
+
+/* Glowing Border Effect */
+.futuristic-border {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px;
+    background: #ffffff;
+    z-index: 1;
+    animation: glows 3s infinite;
+    pointer-events: none;
+}
+
+/* Glowing animation */
+@keyframes glows {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Form Label Styling */
+.form-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #7e7e7e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* Container for the radio buttons */
+.preferred-contact-options {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+}
+
+
+.radio-label input[type="radio"] {
+    appearance: none;
+
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+
+.radio-label input[type="radio"]:checked {
+    border-color: #0b8043;
+
+    background-color: #0b8043;
+}
+
+.radio-label input[type="radio"]:checked::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #0b8043;
+
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+.radio-label:hover input[type="radio"] {
+    border-color: #0b8043;
+}
+
+.pricing-section {
+    background: linear-gradient(to bottom right, #f8fafc, #e7f3ff);
+}
+
+.section-title h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+}
+
+.section-title span {
+    color: #3498db;
+}
+
+.pricing-card {
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 20px rgba(9, 88, 51, 0.219);
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(1, 241, 129, 0.1);
+}
+
+.pricing-card .plan-title {
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+
+.pricing-card .price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #3498db;
+}
+
+.pricing-card .price .currency {
+    font-size: 1.5rem;
+    vertical-align: top;
+}
+
+.pricing-card .price .duration {
+    font-size: 1rem;
+    color: #7f8c8d;
+}
+
+.pricing-card ul {
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+}
+
+.pricing-card ul li {
+    display: flex;
+
+    align-items: center;
+
+    margin-bottom: 10px;
+
+    padding: 5px 0;
+
+    font-size: 1rem;
+    color: #2c3e50;
+
+    border-bottom: 1px solid #f1f1f1;
+
+}
+
+.pricing-card ul li:last-child {
+    border-bottom: none;
+
+}
+
+.pricing-card ul li:hover {
+    color: #e67e22;
+
+}
+
+.pricing-card ul li::before {
+    content: "✔";
+
+    color: #3498db;
+
+    margin-right: 8px;
+
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+.btn-success {
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn-success:hover {
+    background-color: #27ae60;
+}
+
+.premium-plan {
+    border: 2px solid #2ecc71;
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.2);
+}
+
+@media (max-width: 768px) {
+    .pricing-card {
+        margin-bottom: 20px;
+    }
+
+    .price {
+        font-size: 2rem;
+    }
+
+    .plan-title {
+        font-size: 1.25rem;
+    }
+}
+
+.login-register-buttons {
+    font-size: 16px;
+    font-weight: 600;
+    color: #eb0840;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.login-register-buttons a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.login-register-buttons a:hover {
+    color: #ffffff;
+    /* Darker shade on hover */
+}
+
+.login-register-buttons span {
+    color: #ffffff;
+    /* Neutral color for separator */
+}
+
+/* General container styling */
+.login-after {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+}
+
+/* Notification Bell */
+.notification-bell {
+    position: relative;
+
+    font-size: 24px;
+    color: #fff;
+    /* White icon */
+    cursor: pointer;
+}
+
+.notification-dot {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    border-radius: 50%;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px 2px rgba(255, 0, 0, 0.5);
+    }
+
+    100% {
+        box-shadow: 0 0 8px 4px rgba(255, 0, 0, 0.8);
+    }
+}
+
+/* Coin Icon */
+.coin-icon {
+    font-size: 28px;
+    color: #f4c542;
+    /* Bright gold */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.coin-icon:hover {
+    transform: scale(1.1);
+    color: #ffc107;
+    /* Brighter gold on hover */
+}
+
+/* Notification Bell */
+.notification-bell {
+    position: relative;
+    color: white;
+    cursor: pointer;
+}
+
+.notification-dot {
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.trend-item {
+    position: relative;
+    /* To position the ribbon inside the item */
+}
+
+.premium-ribbon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* background-color: #ff6347; */
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    transform-origin: top right;
+    z-index: 10;
+}
+
+.premium-ribbon::before,
+.premium-ribbon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    z-index: -1;
+}
+
+.premium-ribbon::before {
+    top: 0;
+    left: 0;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.premium-ribbon::after {
+    bottom: 0;
+    right: 0;
+    clip-path: polygon(100% 100%, 0 100%, 100% 0);
+}
+
+.sidebar-category label {
+
+    display: inline-block;
+    color: #777;
+    margin-bottom: 0px;
+    font-weight: 600;
+    font-size: 16px;
+
+}
+
+.button-wrapper {
+    position: relative;
+    margin-right: 15px;
+
+}
+
+
+.button {
+    display: block;
+    font-size: 15px !important;
+    line-height: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 15px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(37, 37, 37);
+    border-radius: 50px;
+    border: 0px;
+    cursor: pointer;
+}
+
+.button-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    background: linear-gradient(90deg, #FF8038 0%, #FF0099 30.43%, #00EBEB 68.23%, #DB00FF 100%);
+    background-size: 600% 600%;
+    border-radius: 50px;
+    animation: AnimateBorder 4s ease infinite;
+    -webkit-animation: AnimateBorder 4s ease infinite;
+    -moz-animation: AnimateBorder 4s ease infinite;
+    z-index: -1;
+    transform: translate(-2px, -2px);
+    transition: filter 1s ease-in;
+}
+
+.button-wrapper:hover .button-bg {
+    filter: blur(10px);
+    transition: filter .4s ease-in;
+}
+
+
+@-webkit-keyframes AnimateBorder {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes AnimateBorder {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes AnimateBorder {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+.pignose-calendar {
+    width: 100% !important;
+}
